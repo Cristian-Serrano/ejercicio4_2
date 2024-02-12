@@ -25,4 +25,23 @@ public class Pelicula {
 
     @ManyToMany
     private Set<Categoria> categorias = new HashSet<>();
+
+    @ManyToMany
+    private Set<Actor> actores = new HashSet<>();
+
+    @ManyToOne
+    private Idioma idioma;
+
+    public Pelicula(long id, String titulo, Set<Categoria> categorias) {
+        this.id = id;
+        this.titulo = titulo;
+        this.categorias = categorias;
+    }
+
+    public Pelicula(long id, String titulo, Set<Categoria> categorias, Set<Actor> actores) {
+        this.id = id;
+        this.titulo = titulo;
+        this.categorias = categorias;
+        this.actores = actores;
+    }
 }
